@@ -4,12 +4,16 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import "./globals.css"
 import { useRouter } from "next/navigation";
 
+
+// Home component renders the landing page of the application, displaying user information if logged in or prompting for login
 export default function Home() {
+    // Fetching user data using the useUser hook & Initializing useRouter hook for navigation
     const { user, error, isLoading } = useUser();
     const router = useRouter();
 
     console.log(user)
 
+    // Render different content based on user authentication status
     return (
         <div className="flex justify-center items-center h-screen">
             <div className="bg-white p-8 rounded-lg shadow-xl">
@@ -21,9 +25,9 @@ export default function Home() {
                         <div>
                             Email <span className="font-bold">{user.email}</span>
                         </div>
-                        <div>
+                        {/* <div>
                             Session ID <span className="font-bold">{user.sid}</span>
-                        </div>
+                        </div> */}
                         
                         <button 
                             onClick={() => {router.push("/api/auth/logout")}}
