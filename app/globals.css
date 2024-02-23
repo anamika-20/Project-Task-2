@@ -1,3 +1,9 @@
+/* Include base styles from Tailwind CSS  */
+/* Include component styles from Tailwind CSS */
+/* Include utility styles from Tailwind CSS */
+/* Set the height of the root element and HTML to 100% */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
